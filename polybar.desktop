@@ -1,0 +1,6 @@
+[Desktop Entry]				
+Type=Application
+Exec=polybar mybar
+Name=Polybar
+Comment=Start Polybar
+X-GNOME-Autostart-enabled=true

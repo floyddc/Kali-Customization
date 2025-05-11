@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=devilspie2
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=Devilspie2
+Comment=Remove window decorations
