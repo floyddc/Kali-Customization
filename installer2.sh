@@ -49,5 +49,5 @@ cp "$current_path/ohmyzsh-p10k/rootZshrc" /root/.zshrc
 
 echo "Customization completed! Restarting your Terminal..."
 sleep 2
-xfce4-terminal &
+x-terminal-emulator &
 exit
