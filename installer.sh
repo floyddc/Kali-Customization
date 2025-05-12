@@ -56,46 +56,4 @@ echo "Terminal border removed."
 
 # ohmyzsh / p10k config
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-mv /root/.oh-my-zsh /etc/oh-my-zsh
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /etc/oh-my-zsh/themes/powerlevel10k 
-cp "$current_path/ohmyzsh-p10k/globalZshrc" /etc/zsh/zshrc
-echo "source /etc/zsh/zshrc" | tee /etc/skel/.zshrc > /dev/null
-for user in $(cut -f1 -d: /etc/passwd); do
-    if [ -d /home/$user ]; then
-        echo "source /etc/zsh/zshrc" |
-        tee /home/$user/.zshrc > /dev/null
-        chown $user:$user /home/$user/.zshrc
-    fi
-done
-
-if ! grep -Fxq "source /etc/zsh/zshrc" /root/.zshrc; then
-    echo "source /etc/zsh/zshrc" >> /root/.zshrc
-    echo "Line added to /root/.zshrc"
-else
-    echo "Line already exists in /root/.zshrc"
-fi
-
-cp "$current_path/ohmyzsh-p10k/p10k" /etc
-
-for user in $(cut -f1 -d: /etc/passwd); do
-    if [ -d /home/$user ]; then
-        cat <<EOF | tee /home/$user/.zshrc > /dev/null
-if [[ -r "\${XDG_CACHE_HOME:-\$HOME/.cache}/p10k-instant-prompt-\${(%):-%n}.zsh" ]]; then
-  source "\${XDG_CACHE_HOME:-\$HOME/.cache}/p10k-instant-prompt-\${(%):-%n}.zsh"
-fi
-source /etc/zsh/zshrc
-[[ ! -f /etc/.p10k.zsh ]] || source /etc/.p10k.zsh
-EOF
-        chown $user:$user /home/$user/.zshrc
-    fi
-done
-cat <<EOF | tee /etc/skel/.zshrc > /dev/null
-if [[ -r "\${XDG_CACHE_HOME:-\$HOME/.cache}/p10k-instant-prompt-\${(%):-%n}.zsh" ]]; then
-  source "\${XDG_CACHE_HOME:-\$HOME/.cache}/p10k-instant-prompt-\${(%):-%n}.zsh"
-fi
-source /etc/zsh/zshrc
-[[ ! -f /etc/.p10k.zsh ]] || source /etc/.p10k.zsh
-EOF
-
-cp "$current_path/ohmyzsh-p10k/rootZshrc" /root/.zshrc
-echo "Customization completed. Restart your Terminal."
+echo "Customization started. Now run installer2.sh"
