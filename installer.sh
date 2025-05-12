@@ -55,5 +55,5 @@ cp "$current_path/qterminal-borders/devilspie2.desktop" /etc/xdg/autostart/devil
 echo "Terminal border removed."
 
 # ohmyzsh / p10k config
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ""
 echo "Customization started. Now run installer2.sh"
