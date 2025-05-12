@@ -1,5 +1,6 @@
 mv /root/.oh-my-zsh /etc/oh-my-zsh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /etc/oh-my-zsh/themes/powerlevel10k 
+rm /etc/zsh/zshrc
 cp "$current_path/ohmyzsh-p10k/globalZshrc" /etc/zsh/zshrc
 echo "source /etc/zsh/zshrc" | tee /etc/skel/.zshrc > /dev/null
 for user in $(cut -f1 -d: /etc/passwd); do
@@ -10,14 +11,11 @@ for user in $(cut -f1 -d: /etc/passwd); do
     fi
 done
 
-if ! grep -Fxq "source /etc/zsh/zshrc" /root/.zshrc; then
-    echo "source /etc/zsh/zshrc" >> /root/.zshrc
-    echo "Line added to /root/.zshrc"
-else
-    echo "Line already exists in /root/.zshrc"
-fi
+rm /root/.zshrc
+cp "$current_path/ohmyzsh-p10k/rootZshrc" /root/.zshrc
 
-cp "$current_path/ohmyzsh-p10k/p10k" /etc
+rm /etc/.p10k.zsh
+cp "$current_path/ohmyzsh-p10k/p10k" /etc/.p10k.zsh
 
 for user in $(cut -f1 -d: /etc/passwd); do
     if [ -d /home/$user ]; then
@@ -39,5 +37,6 @@ source /etc/zsh/zshrc
 [[ ! -f /etc/.p10k.zsh ]] || source /etc/.p10k.zsh
 EOF
 
+rm /root/.zshrc
 cp "$current_path/ohmyzsh-p10k/rootZshrc" /root/.zshrc
 echo "Customization completed."
