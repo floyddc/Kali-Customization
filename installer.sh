@@ -55,7 +55,7 @@ cp "$current_path/qterminal-borders/devilspie2.desktop" /etc/xdg/autostart/devil
 echo "Terminal border removed."
 
 # ohmyzsh / p10k config
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 mv /root/.oh-my-zsh /etc/oh-my-zsh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /etc/oh-my-zsh/themes/powerlevel10k 
 cp "$current_path/ohmyzsh-p10k/globalZshrc" /etc/zsh/zshrc
