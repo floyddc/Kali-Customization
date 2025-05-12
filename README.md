@@ -13,3 +13,9 @@ _Tested on Kali Linux 2024.4_
 ## Recommended initial phase
 - `sudo apt update`
 - `sudo apt upgrade`
+
+## Screenshots
+<img src="screenshotDesktop.png" alt="screenshotDesktop">
+<img src="screenshotRofi.png" alt="screenshotRofi">
+<img src="screenshotTerminal.png" alt="screenshotTerminal">
+
