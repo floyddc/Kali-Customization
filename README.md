@@ -15,7 +15,6 @@ _Tested on Kali Linux 2024.4_
 - `sudo apt upgrade`
 
 ## Screenshots
-<img src="screenshotDesktop.png" alt="screenshotDesktop">
-<img src="screenshotRofi.png" alt="screenshotRofi">
-<img src="screenshotTerminal.png" alt="screenshotTerminal">
-
+<img src="screenshots/screenshotDesktop.png" alt="screenshotDesktop">
+<img src="screenshots/screenshotRofi.png" alt="screenshotRofi">
+<img src="screenshots/screenshotTerminal.png" alt="screenshotTerminal">
