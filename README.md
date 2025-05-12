@@ -1,6 +1,6 @@
 # Automatic Customization
 Script and files to customize your Linux environment.<br> 
-_Tested on Kali Linux 2024.4_
+_Tested on Kali Linux 2024.4 and 2025.1c_
 
 ## Usage
 - `sudo -s` to log in as superuser
@@ -8,11 +8,37 @@ _Tested on Kali Linux 2024.4_
 - `./installer.sh` to run the first script
 - Wait the end of the first installation
 - `./installer2.sh` to run the second script
-- Restart your Terminal to apply changes
 
 ## Recommended initial phase
 - `sudo apt update`
-- `sudo apt upgrade`
+- `sudo apt upgrade`# Universal-Customization
+
+## Further actions to do
+- Restart your Terminal to apply changes on Polybar and Terminal
+- Restart your machine to apply changes on Terminal top border
+
+## Useful shortcuts 
+_Super is the Windows button_
+- Run Terminal
+  - COMMAND: `Super + Enter`
+  - SHORTCUT: `qterminal`
+- Run Rofi
+  - COMMAND: `Super`
+  - SHORTCUT: `rofi -show run -config /usr/share/rofi/themes/theme.rasi`
+- Run Firefox
+  - COMMAND: `Super + B`
+  - SHORTCUT: `firefox`
+- Run Thunar file manager
+  - COMMAND: `Super + F`
+  - SHORTCUT: `thunar` 
+- Split Terminal vertically (on Terminal preferences)
+  - SHORTCUT: `Ctrl + V` 
+- Split Terminal horizontally (on Terminal preferences)
+  - SHORTCUT: `Ctrl + H` 
+
+## Other tips
+- `Desktop settings -> Menu`: uncheck "Include applications menu on desktop right click" and "Show window list menu on desktop middle click"
+- `Desktop settings -> Desktop icons`: Icon type -> None
 
 ## Screenshots
 <img src="screenshots/screenshotDesktop.png" alt="screenshotDesktop">
