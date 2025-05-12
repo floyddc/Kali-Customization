@@ -1,7 +1,6 @@
 #!/bin/bash
 current_path=$(pwd)
 echo $current_path
-apt update
 
 # Packets installer
 apt install -y polybar bspwm wmctrl xfce4-terminal tmux xbindkeys lsd vivid xclip bat rofi devilspie2
@@ -54,6 +53,6 @@ cp "$current_path/qterminal-borders/qterminal.conf" /etc/xdg/qterminal.org/qterm
 cp "$current_path/qterminal-borders/devilspie2.desktop" /etc/xdg/autostart/devilspie2.desktop
 echo "Terminal border removed."
 
-# ohmyzsh / p10k config
+# ohmyzsh installer
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ""
 echo "Customization started. Now run installer2.sh"

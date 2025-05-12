@@ -1,7 +1,12 @@
 current_path=$(pwd)
 echo $current_path
+
 mv /root/.oh-my-zsh /etc/oh-my-zsh
+
+# Powerlevel10k installer
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /etc/oh-my-zsh/themes/powerlevel10k 
+
+# ohmyzsh / p10k config
 rm /etc/zsh/zshrc
 cp "$current_path/ohmyzsh-p10k/globalZshrc" /etc/zsh/zshrc
 echo "source /etc/zsh/zshrc" | tee /etc/skel/.zshrc > /dev/null
@@ -41,4 +46,8 @@ EOF
 
 rm /root/.zshrc
 cp "$current_path/ohmyzsh-p10k/rootZshrc" /root/.zshrc
-echo "Customization completed."
+
+echo "Customization completed! Restarting your Terminal..."
+sleep 2
+xfce4-terminal &
+exit
