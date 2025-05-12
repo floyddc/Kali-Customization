@@ -47,7 +47,5 @@ EOF
 rm /root/.zshrc
 cp "$current_path/ohmyzsh-p10k/rootZshrc" /root/.zshrc
 
-echo "Customization completed! Restarting your Terminal..."
-sleep 2
-x-terminal-emulator &
+echo "Customization completed! Restart your Terminal to apply changes!"
 exit
