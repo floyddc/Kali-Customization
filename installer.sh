@@ -59,8 +59,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 mv /root/.oh-my-zsh /etc/oh-my-zsh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /etc/oh-my-zsh/themes/powerlevel10k 
 cp "$current_path/ohmyzsh-p10k/globalZshrc" /etc/zsh/zshrc
-exec bash -c "exit"
-
 echo "source /etc/zsh/zshrc" | tee /etc/skel/.zshrc > /dev/null
 for user in $(cut -f1 -d: /etc/passwd); do
     if [ -d /home/$user ]; then
