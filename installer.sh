@@ -98,4 +98,4 @@ source /etc/zsh/zshrc
 EOF
 
 cp "$current_path/ohmyzsh-p10k/rootZshrc" /root/.zshrc
-echo "Customization completed."
+echo "Customization completed. Restart your Terminal."
