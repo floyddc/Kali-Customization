@@ -1,3 +1,5 @@
+current_path=$(pwd)
+echo $current_path
 mv /root/.oh-my-zsh /etc/oh-my-zsh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /etc/oh-my-zsh/themes/powerlevel10k 
 rm /etc/zsh/zshrc
