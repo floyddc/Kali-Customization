@@ -44,8 +44,11 @@ _Super is the Windows button_
     - SHORTCUT: `Ctrl + W` 
 
 ## Other features (to set)
-- `Desktop settings -> Menu`: uncheck "Include applications menu on desktop right click" and "Show window list menu on desktop middle click"
-- `Desktop settings -> Desktop icons`: Icon type -> None
+- `Desktop settings -> Menu`: 
+  - uncheck "Include applications menu on desktop right click"
+  - uncheck "Show window list menu on desktop middle click"
+- `Desktop settings -> Desktop icons`: 
+  - Icon type -> None
 
 ## Screenshots
 <img src="screenshots/screenshotDesktop.png" alt="screenshotDesktop">
