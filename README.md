@@ -11,32 +11,39 @@ _Tested on Kali Linux 2024.4 and 2025.1c_
 
 ## Recommended initial phase
 - `sudo apt update`
-- `sudo apt upgrade`# Universal-Customization
+- `sudo apt upgrade`
 
 ## Further actions to do
 - Restart your Terminal to apply changes on Polybar and Terminal
 - Restart your machine to apply changes on Terminal top border
 
-## Useful shortcuts 
+## Useful shortcuts (to set)
 _Super is the Windows button_
-- Run Terminal
-  - COMMAND: `Super + Enter`
-  - SHORTCUT: `qterminal`
-- Run Rofi
-  - COMMAND: `Super`
-  - SHORTCUT: `rofi -show run -config /usr/share/rofi/themes/theme.rasi`
-- Run Firefox
-  - COMMAND: `Super + B`
-  - SHORTCUT: `firefox`
-- Run Thunar file manager
-  - COMMAND: `Super + F`
-  - SHORTCUT: `thunar` 
-- Split Terminal vertically (on Terminal preferences)
-  - SHORTCUT: `Ctrl + V` 
-- Split Terminal horizontally (on Terminal preferences)
-  - SHORTCUT: `Ctrl + H` 
+- `Keyboard settings -> Shortcuts`:
+  - Run Terminal
+    - COMMAND: `Super + Enter`
+    - SHORTCUT: `qterminal`
+  - Run Rofi
+    - COMMAND: `Super`
+    - SHORTCUT: `rofi -show run -config /usr/share/rofi/themes/theme.rasi`
+  - Run Firefox
+    - COMMAND: `Super + B`
+    - SHORTCUT: `firefox`
+  - Run Thunar file manager
+    - COMMAND: `Super + F`
+    - SHORTCUT: `thunar` 
 
-## Other tips
+- `Terminal -> Preferences`:
+  - Split Terminal vertically 
+    - SHORTCUT: `Ctrl + V` 
+  - Split Terminal horizontally   
+    - SHORTCUT: `Ctrl + H` 
+  - Quit Terminal 
+    - SHORTCUT: `Ctrl + Q` 
+  - Close subTerminal (previously opened vertically/horizontally)   
+    - SHORTCUT: `Ctrl + W` 
+
+## Other features (to set)
 - `Desktop settings -> Menu`: uncheck "Include applications menu on desktop right click" and "Show window list menu on desktop middle click"
 - `Desktop settings -> Desktop icons`: Icon type -> None
 
