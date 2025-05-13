@@ -2,11 +2,19 @@
 Script and files to customize your Linux environment.<br> 
 _Tested on Kali Linux 2024.4 and 2025.1c_
 
-## Recommended initial phase
+- [Recommended initial steps](#recommended-initial-steps)
+- [Usage](#usage)
+- [Further actions to do](#further-actions-to-do)
+- [Useful shortcuts (to set)](#useful-shortcuts-to-set)
+- [Other features (to set)](#other-features-to-set)
+- [Useful commands (already set)](#useful-commands-already-set)
+- [Screenshots](#screenshots)
+
+## Recommended initial steps
 - `sudo apt update`
 - `sudo apt upgrade`
 
-## USAGE
+## Usage
 - `sudo -s` to log in as superuser
 - `chmod +x installer.sh installer2.sh` to give scripts execution permissions
 - `./installer.sh` to run the first script
