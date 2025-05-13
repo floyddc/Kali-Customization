@@ -11,7 +11,7 @@ _Tested on Kali Linux 2024.4 and 2025.1c_
 
 ## Recommended initial phase
 - `sudo apt update`
-- `sudo apt upgrade`# Universal-Customization
+- `sudo apt upgrade`
 
 ## Further actions to do
 - Restart your Terminal to apply changes on Polybar and Terminal
