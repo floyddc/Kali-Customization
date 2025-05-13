@@ -50,7 +50,20 @@ _Super is the Windows button_
 - `Desktop settings -> Desktop icons`: 
   - Icon type -> None
 
+## Useful commands (already set)
+- `ip` instead of `ifconfig`
+- `cls` instead of `clear`
+- `ls` instead of `lsd -l` (lists files/dirs with nerd fonts)
+- `lst` instead of `ls -tree` (prints files/dirs tree)
+- `cat` instead of `batcat py` (prints file with highlighted lines)
+- `off` instead of `poweroff`
+- `settarget <IP>` (sets your target IP address on your Polybar)
+- `extractPorts <file>` (extracts open ports from a grepable file and copies them on your clipboard)
+
 ## Screenshots
-<img src="screenshots/screenshotDesktop.png" alt="screenshotDesktop">
-<img src="screenshots/screenshotRofi.png" alt="screenshotRofi">
-<img src="screenshots/screenshotTerminal.png" alt="screenshotTerminal">
+<img src="screenshots/rofi.png" alt="screenshotRofi">
+<img src="screenshots/ls.png" alt="screenshotLs">
+<img src="screenshots/lst.png" alt="screenshotLst">
+<img src="screenshots/cat.png" alt="screenshotCat"><br>
+<img src="screenshots/polybar.png" alt="screenshotPolybar">
+<img src="screenshots/utilities.png" alt="screenshotUtilities">
