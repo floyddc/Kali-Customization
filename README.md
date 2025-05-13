@@ -11,11 +11,11 @@ _Tested on Kali Linux 2024.4 and 2025.1c_
 - [Screenshots](#screenshots)
 
 ## Recommended initial steps
-- `sudo apt update`
-- `sudo apt upgrade`
+- `sudo -s` to log in as superuser
+- `sudo apt update` to check for updates
+- `sudo apt upgrade` to upgrade packets
 
 ## Usage
-- `sudo -s` to log in as superuser
 - `chmod +x installer.sh installer2.sh` to give scripts execution permissions
 - `./installer.sh` to run the first script
 - Wait for the end of the first installation, so don't close anything
