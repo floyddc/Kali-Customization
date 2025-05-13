@@ -23,10 +23,10 @@ _Super is the Windows button_
   - Run Terminal
     - COMMAND: `Super + Enter`
     - SHORTCUT: `qterminal`
-  - Run Rofi
+  - Run Rofi application manager
     - COMMAND: `Super`
     - SHORTCUT: `rofi -show run -config /usr/share/rofi/themes/theme.rasi`
-  - Run Firefox
+  - Run Firefox browser
     - COMMAND: `Super + B`
     - SHORTCUT: `firefox`
   - Run Thunar file manager
