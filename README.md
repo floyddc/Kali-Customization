@@ -2,16 +2,16 @@
 Script and files to customize your Linux environment.<br> 
 _Tested on Kali Linux 2024.4 and 2025.1c_
 
-## Usage
+## Recommended initial phase
+- `sudo apt update`
+- `sudo apt upgrade`
+
+## USAGE
 - `sudo -s` to log in as superuser
 - `chmod +x installer.sh installer2.sh` to give scripts execution permissions
 - `./installer.sh` to run the first script
 - Wait for the end of the first installation, so don't close anything
 - `./installer2.sh` to run the second script
-
-## Recommended initial phase
-- `sudo apt update`
-- `sudo apt upgrade`
 
 ## Further actions to do
 - Restart your Terminal to apply changes on Polybar and Terminal
