@@ -2074,7 +2074,7 @@ alias ls='lsd -l'
 alias lst='ls --tree'
 alias cat="batcat --paging=never -l py"
 
-nohup polybar mybar > /dev/null 2>&1 </dev/null &! 
+#nohup polybar mybar > /dev/null 2>&1 </dev/null &! 
 
 export LS_COLORS="$(vivid generate /etc/vivid/themes/theme.yml)"
 
