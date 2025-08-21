@@ -51,8 +51,8 @@ _Super is the Windows button_
 
 ## Other features (to set)
 - `Desktop settings -> Menu`: 
-  - uncheck "Include applications menu on desktop right click"
-  - uncheck "Show window list menu on desktop middle click"
+  - uncheck `Include applications menu on desktop right click`
+  - uncheck `Show window list menu on desktop middle click`
 - `Desktop settings -> Desktop icons`: 
   - Icon type -> `None`
 
