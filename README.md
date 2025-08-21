@@ -46,14 +46,15 @@ _Super is the Windows button_
   - Quit Terminal: `Ctrl + Q` 
   - Open vertical subTerminal: `Ctrl + V` 
   - Open horizontal subTerminal: `Ctrl + H` 
-  - Close subTerminal: `Ctrl + W` 
+  - Close subTerminal: `Ctrl + W`
+  - Font size: `12pt`
 
 ## Other features (to set)
 - `Desktop settings -> Menu`: 
   - uncheck "Include applications menu on desktop right click"
   - uncheck "Show window list menu on desktop middle click"
 - `Desktop settings -> Desktop icons`: 
-  - Icon type -> None
+  - Icon type -> `None`
 
 ## Useful commands (already set)
 - `ip` instead of `ifconfig`
