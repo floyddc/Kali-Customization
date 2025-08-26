@@ -55,6 +55,8 @@ _Super is the Windows button_
   - uncheck `Show window list menu on desktop middle click`
 - `Desktop settings -> Desktop icons`: 
   - Icon type -> `None`
+- `Desktop settings -> Background`:
+  - Color -> `Solid color` (#161515)
 
 ## Useful commands (already set)
 - `ip` instead of `ifconfig`
