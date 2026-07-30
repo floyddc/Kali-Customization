@@ -30,17 +30,18 @@ _Tested on Kali Linux 2024.4 and 2025.1c_
 _Super is the Windows button_
 - `Keyboard settings -> Shortcuts`:
   - Run Terminal
-    - _COMMAND_: `Super + Enter`
-    - _SHORTCUT_: `qterminal`
+    - _COMMAND_: `qterminal`
+    - _SHORTCUT_: `Windows + Enter`
   - Run Rofi application manager
-    - _COMMAND_: `Super`
-    - _SHORTCUT_: `rofi -show run -config /usr/share/rofi/themes/theme.rasi`
+    - _COMMAND_: `rofi -show run -config /usr/share/rofi/themes/theme.rasi`
+    - _SHORTCUT_: `R` 
+      - `Esc` to close
   - Run Firefox browser
-    - _COMMAND_: `Super + B`
-    - _SHORTCUT_: `firefox`
+    - _COMMAND_: `firefox`
+    - _SHORTCUT_: `Windows + B`
   - Run Thunar file manager
-    - _COMMAND_: `Super + F`
-    - _SHORTCUT_: `thunar` 
+    - _COMMAND_: `thunar`
+    - _SHORTCUT_: `Windows + F` 
 
 - `Terminal -> Preferences`:
   - Quit Terminal: `Ctrl + Q` 
