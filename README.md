@@ -34,7 +34,7 @@ _Super is the Windows button_
     - _SHORTCUT_: `Windows + Enter`
   - Run Rofi application manager
     - _COMMAND_: `rofi -show run -config /usr/share/rofi/themes/theme.rasi`
-    - _SHORTCUT_: `R` 
+    - _SHORTCUT_: `Windows + R` 
       - `Esc` to close
   - Run Firefox browser
     - _COMMAND_: `firefox`
