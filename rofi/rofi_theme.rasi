@@ -37,11 +37,16 @@
 
 
 }
+
 window {
+    width: 20%;
+    height: 0px;
     background-color: @background;
-    border:           1;
-    padding:          5;
+    border: 1px;
+    border-color: @bordercolor;
+    padding: 5px;
 }
+
 mainbox {
     border:  0;
     padding: 0;
@@ -54,14 +59,21 @@ message {
 textbox {
     text-color: @foreground;
 }
+
 listview {
     fixed-height: 0;
-    border:       2px 0px 0px ;
+    border: 2px 0px 0px;
     border-color: @separatorcolor;
-    spacing:      2px ;
-    scrollbar:    true;
-    padding:      2px 0px 0px ;
+    spacing: 1px;
+    scrollbar: false;
+    padding: 3px 0px 0px;
 }
+
+element {
+    border: 0;
+    padding: 4px 6px;
+}
+
 element {
     border:  0;
     padding: 1px ;

@@ -30,6 +30,8 @@ cp "$current_path/polybar/polybar_config.ini" /etc/polybar/config.ini
 mkdir -p /etc/polybar/scripts
 cp "$current_path/polybar/target_setter.sh" /etc/polybar/scripts/target_setter.sh
 chmod 777 /etc/polybar/scripts/target_setter.sh
+cp "$current_path/polybar/powermenu.sh" /etc/polybar/scripts/powermenu.sh
+chmod +x /etc/polybar/scripts/powermenu.sh
 cp "$current_path/polybar/polybar.desktop" /etc/xdg/autostart/polybar.desktop
 echo "Polybar configured."
 
