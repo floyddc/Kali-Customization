@@ -63,6 +63,10 @@ _Super is the Windows button_
 
   - Font size: `12pt`
 
+  - Color scheme: `Linux`
+
+  - Terminal transparency: `10%` 
+
 ## Other features (to set)
 - `Desktop settings -> Menu`: 
   - Uncheck `Include applications menu on desktop right click`
@@ -70,10 +74,10 @@ _Super is the Windows button_
   - Uncheck `Show window list menu on desktop middle click`
 
 - `Desktop settings -> Desktop icons`: 
-  - _ICON TYPE_: `None`
+  - Icon type: `None`
 
 - `Desktop settings -> Background`:
-  - _COLOR_: `Solid color` (#161515)
+  - Color: `Solid color` (#161515)
 
 - `Xfce4 session settings -> Application autostart`:
   - Add:
@@ -84,7 +88,7 @@ _Super is the Windows button_
     - _TRIGGER_: `on login`
 
 - `Xfwm4 workspace settings`: 
-  - _NUMBER OF WORKSPACES_: change it as you prefer
+  - Number of workspaces: change it as you prefer
 
 ## Useful commands (already set)
 - `ip` instead of `ifconfig`
@@ -104,9 +108,14 @@ _Super is the Windows button_
 - `extractPorts <file>` (extracts open ports from a grepable file and copies them on your clipboard)
 
 ## Screenshots
-<img src="screenshots/rofi.png" alt="screenshotRofi">
-<img src="screenshots/ls.png" alt="screenshotLs">
-<img src="screenshots/lst.png" alt="screenshotLst">
+<img src="screenshots/desktop.png" alt="screenshotDesktop"><br>
+
+<img src="screenshots/rofi.png" alt="screenshotRofi"><br>
+
+<img src="screenshots/power.png" alt="screenshotPower"><br>
+
+<img src="screenshots/lst.png" alt="screenshotLst"><br>
+
 <img src="screenshots/cat.png" alt="screenshotCat"><br>
-<img src="screenshots/polybar.png" alt="screenshotPolybar">
+
 <img src="screenshots/utilities.png" alt="screenshotUtilities">
