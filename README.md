@@ -1,7 +1,7 @@
 # Automatic Kali Customization
 Script and files to customize your Kali Linux environment.<br> 
 The main purpose of this customization is doing everything through your keyboard, without any mouse.<br>
-_Tested on Kali Linux 2024.4 and 2025.1c_
+_Tested up to Kali Linux 2026.2_
 
 - [Recommended initial steps](#recommended-initial-steps)
 - [Usage](#usage)
@@ -13,17 +13,23 @@ _Tested on Kali Linux 2024.4 and 2025.1c_
 
 ## Recommended initial steps
 - `sudo -s` to log in as superuser
+
 - `sudo apt update` to check for updates
+
 - `sudo apt upgrade` to upgrade packets
 
 ## Usage
 - `chmod +x installer.sh installer2.sh` to give scripts execution permissions
+
 - `./installer.sh` to run the first script
+
 - Wait for the end of the first installation, so don't close anything
+
 - `./installer2.sh` to run the second script
 
 ## Further actions to do
 - Restart your Terminal to apply changes on Polybar and Terminal
+
 - Restart your machine to apply changes on Terminal top border
 
 ## Useful shortcuts (to set)
@@ -32,41 +38,69 @@ _Super is the Windows button_
   - Run Terminal
     - _COMMAND_: `qterminal`
     - _SHORTCUT_: `Windows + Enter`
+
   - Run Rofi application manager
     - _COMMAND_: `rofi -show run -config /usr/share/rofi/themes/theme.rasi`
     - _SHORTCUT_: `Windows + R` 
       - `Esc` to close
+
   - Run Firefox browser
     - _COMMAND_: `firefox`
     - _SHORTCUT_: `Windows + B`
+
   - Run Thunar file manager
     - _COMMAND_: `thunar`
     - _SHORTCUT_: `Windows + F` 
 
 - `Terminal -> Preferences`:
   - Quit Terminal: `Ctrl + Q` 
+
   - Open vertical subTerminal: `Ctrl + V` 
+
   - Open horizontal subTerminal: `Ctrl + H` 
+
   - Close subTerminal: `Ctrl + W`
+
   - Font size: `12pt`
 
 ## Other features (to set)
 - `Desktop settings -> Menu`: 
-  - uncheck `Include applications menu on desktop right click`
-  - uncheck `Show window list menu on desktop middle click`
+  - Uncheck `Include applications menu on desktop right click`
+
+  - Uncheck `Show window list menu on desktop middle click`
+
 - `Desktop settings -> Desktop icons`: 
-  - Icon type -> `None`
+  - _ICON TYPE_: `None`
+
 - `Desktop settings -> Background`:
-  - Color -> `Solid color` (#161515)
+  - _COLOR_: `Solid color` (#161515)
+
+- `Xfce4 session settings -> Application autostart`:
+  - Add:
+    - _NAME_: `Disable Panel`
+
+    - _COMMAND_: `xfce4-panel --quit`
+
+    - _TRIGGER_: `on login`
+
+- `Xfwm4 workspace settings`: 
+  - _NUMBER OF WORKSPACES_: change it as you prefer
 
 ## Useful commands (already set)
 - `ip` instead of `ifconfig`
+
 - `cls` instead of `clear`
+
 - `ls` instead of `lsd -l` (lists files/dirs with nerd fonts)
+
 - `lst` instead of `ls -tree` (prints files/dirs tree)
+
 - `cat` instead of `batcat py` (prints file with highlighted lines)
+
 - `off` instead of `poweroff`
+
 - `settarget <IP>` (sets your target IP address on your Polybar)
+
 - `extractPorts <file>` (extracts open ports from a grepable file and copies them on your clipboard)
 
 ## Screenshots
