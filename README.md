@@ -1,113 +1,108 @@
-# Automatic Kali Customization
+# 👨🏻‍💻 Automatic Kali Linux customization
 Script and files to customize your Kali Linux environment.<br> 
-The main purpose of this customization is doing everything through your keyboard, without any mouse.<br>
 _Tested up to Kali Linux 2026.2_
 
-- [Recommended initial steps](#recommended-initial-steps)
-- [Usage](#usage)
-- [Further actions to do](#further-actions-to-do)
-- [Useful shortcuts (to set)](#useful-shortcuts-to-set)
-- [Other features (to set)](#other-features-to-set)
-- [Useful commands (already set)](#useful-commands-already-set)
-- [Screenshots](#screenshots)
+- [Usage](#-usage)
+- [What does the script do?](#-what-does-the-script-do)
+- [Screenshots](#-screenshots)
 
-## Recommended initial steps
-- `sudo -s` to log in as superuser
+## 🚀 Usage
+- `git clone github.com/floyddc/Kali-Customization`
 
-- `sudo apt update` to check for updates
+- `cd Kali-Customization`
 
-- `sudo apt upgrade` to upgrade packets
+- `chmod +x kali-customize.sh`
 
-## Usage
-- `chmod +x installer.sh installer2.sh` to give scripts execution permissions
+- `./kali_customization.sh` (do NOT run as root)
 
-- `./installer.sh` to run the first script
+## ✅ What does the script do?
+1) Creates a backup.
 
-- Wait for the end of the first installation, so don't close anything
+2) Updates the system.
 
-- `./installer2.sh` to run the second script
+3) Installs packages.
 
-## Further actions to do
-- Restart your Terminal to apply changes on Polybar and Terminal
+4) Download this repository and validates it.
 
-- Restart your machine to apply changes on Terminal top border
+5) Setups:
 
-## Useful shortcuts (to set)
-_Super is the Windows button_
-- `Keyboard settings -> Shortcuts`:
-  - Run Terminal
-    - _COMMAND_: `qterminal`
-    - _SHORTCUT_: `Windows + Enter`
+    - Jetbrains Mono Nerd Font.
 
-  - Run Rofi application manager
-    - _COMMAND_: `rofi -show run -config /usr/share/rofi/themes/theme.rasi`
-    - _SHORTCUT_: `Windows + R` 
-      - `Esc` to close
+    - LSD.
+    
+    - Polybar.
 
-  - Run Firefox browser
-    - _COMMAND_: `firefox`
-    - _SHORTCUT_: `Windows + B`
+    - Vivid.
 
-  - Run Thunar file manager
-    - _COMMAND_: `thunar`
-    - _SHORTCUT_: `Windows + F` 
+    - Rofi application manager.
 
-- `Terminal -> Preferences`:
-  - Quit Terminal: `Ctrl + Q` 
+    - QTerminal (user preferencies) / Devilspie2.
 
-  - Open vertical subTerminal: `Ctrl + V` 
+        - Font size: `12pt`.
 
-  - Open horizontal subTerminal: `Ctrl + H` 
+        - Color scheme: `Linux`.
 
-  - Close subTerminal: `Ctrl + W`
+        - Terminal transparency: `10%`. 
 
-  - Font size: `12pt`
+    - Oh-My-Zsh.
 
-  - Color scheme: `Linux`
+    - Powerlevel10k.
 
-  - Terminal transparency: `10%` 
+    - Zsh configuration (for existing and new users).
 
-## Other features (to set)
-- `Desktop settings -> Menu`: 
-  - Uncheck `Include applications menu on desktop right click`
+6) Sets Xfce shortcuts:
 
-  - Uncheck `Show window list menu on desktop middle click`
+    - Run Terminal: `Windows + Enter` (`Esc` to close).
 
-- `Desktop settings -> Desktop icons`: 
-  - Icon type: `None`
+    - Run Rofi: `Windows + R`.
 
-- `Desktop settings -> Background`:
-  - Color: `Solid color` (#161515)
+    - Run Firefox browser: `Windows + B`.
 
-- `Xfce4 session settings -> Application autostart`:
-  - Add:
-    - _NAME_: `Disable Panel`
+    - Run Thunar file manager: `Windows + F`. 
 
-    - _COMMAND_: `xfce4-panel --quit`
+7) Configures Xfce desktop:
 
-    - _TRIGGER_: `on login`
+    - Right-click application menu disabled.
 
-- `Xfwm4 workspace settings`: 
-  - Number of workspaces: change it as you prefer
+    - Middle-click window list disabled.
 
-## Useful commands (already set)
-- `ip` instead of `ifconfig`
+    - Icons disabled.
 
-- `cls` instead of `clear`
+    - Number of workspaces: `8`.
 
-- `ls` instead of `lsd -l` (lists files/dirs with nerd fonts)
+    - Background solid color: `#161515`.
 
-- `lst` instead of `ls -tree` (prints files/dirs tree)
+    - Panel disabled.
 
-- `cat` instead of `batcat py` (prints file with highlighted lines)
+8) Sets Bash aliases:
+    - `ip` instead of `ifconfig`.
 
-- `off` instead of `poweroff`
+    - `cls` instead of `clear`.
 
-- `settarget <IP>` (sets your target IP address on your Polybar)
+    - `ls` instead of `lsd -l` (lists files/dirs with nerd fonts).
 
-- `extractPorts <file>` (extracts open ports from a grepable file and copies them on your clipboard)
+    - `lst` instead of `ls -tree` (prints files/dirs tree).
 
-## Screenshots
+    - `cat` instead of `batcat py` (prints file with highlighted lines).
+
+    - `off` instead of `poweroff`.
+
+9) Sets user commands (utilities):
+
+    - `settarget <IP>` (sets your target IP address on your Polybar).
+
+    - `extractPorts <file>` (extracts open ports from a grepable file and copies them on your clipboard).
+   
+10) Updates PATH.
+
+11) Refreshes all.
+
+12) Prints a resume.
+
+**⚠️ Reboot the OS to apply all changes!** 
+   - `sudo reboot`.
+
+## 📸 Screenshots
 <img src="screenshots/desktop.png" alt="screenshotDesktop"><br>
 
 <img src="screenshots/rofi.png" alt="screenshotRofi"><br>
