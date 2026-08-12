@@ -373,7 +373,6 @@ AskOnExit=false
 MenuVisible=false
 TerminalTransparency=10
 colorScheme=Linux
-fontFamily=JetBrainsMono Nerd Font
 fontSize=12
 
 [Shortcuts]
@@ -846,8 +845,7 @@ echo "  - extractPorts"
 echo
 
 echo "QTerminal:"
-echo "  Font:          JetBrainsMono Nerd Font"
-echo "  Size:          12 pt"
+echo "  Font size:     12 pt"
 echo "  Color scheme:  Linux"
 echo "  Transparency:  10%"
 echo "  Menu bar:      OFF"
