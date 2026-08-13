@@ -345,12 +345,34 @@ sudo mkdir -p /etc/xdg/qterminal.org
 sudo mkdir -p /etc/xdg/autostart
 
 sudo install -m 644 \
+    "$REPO_DIR/qterminal-borders/qterminal.conf" \
+    /etc/xdg/qterminal.org/qterminal.conf
+
+sudo install -m 644 \
     "$REPO_DIR/qterminal-borders/qterminal.lua" \
     /etc/skel/.config/devilspie2/qterminal.lua
 
-sudo install -m 644 \
-    "$REPO_DIR/qterminal-borders/qterminal.conf" \
-    /etc/xdg/qterminal.org/qterminal.conf
+while IFS=: read -r username _ uid _ _ home _; do
+
+    if [[ "$uid" -ge 1000 && "$uid" -lt 60000 ]] &&
+       [[ -d "$home" ]]; then
+
+        echo "[+] Configuring Devilspie2 for user: $username"
+
+        USER_DEVILSPIE_DIR="$home/.config/devilspie2"
+
+        sudo mkdir -p "$USER_DEVILSPIE_DIR"
+
+        sudo install -m 644 \
+            "$REPO_DIR/qterminal-borders/qterminal.lua" \
+            "$USER_DEVILSPIE_DIR/qterminal.lua"
+
+        sudo chown -R "$username:$username" \
+            "$home/.config/devilspie2"
+
+    fi
+
+done < /etc/passwd
 
 sudo install -m 644 \
     "$REPO_DIR/qterminal-borders/devilspie2.desktop" \
@@ -361,13 +383,21 @@ sudo install -m 644 \
 # QTERMINAL USER PREFERENCES
 # ============================================================
 
-echo "[+] Configuring QTerminal preferences..."
+echo "[+] Configuring QTerminal preferences for all users..."
 
-mkdir -p "$QTERMINAL_CONFIG_DIR"
+configure_qterminal_user() {
 
-# If QTerminal has never been opened, create a minimal config.
-if [[ ! -f "$QTERMINAL_CONFIG" ]]; then
-    cat > "$QTERMINAL_CONFIG" <<'EOF'
+    local username="$1"
+    local home="$2"
+
+    local config_dir="$home/.config/qterminal.org"
+    local config="$config_dir/qterminal.ini"
+
+    sudo mkdir -p "$config_dir"
+
+    if [[ ! -f "$config" ]]; then
+
+        sudo tee "$config" >/dev/null <<'EOF'
 [General]
 AskOnExit=false
 MenuVisible=false
@@ -381,42 +411,120 @@ Split%20View%20Left-Right=Ctrl+V
 Split%20View%20Top-Bottom=Ctrl+H
 Close%20Tab=Ctrl+W
 EOF
-else
 
-    # General settings
-    sed -i \
-        's/^fontSize=.*/fontSize=12/' \
-        "$QTERMINAL_CONFIG"
+    else
 
-    sed -i \
-        's/^colorScheme=.*/colorScheme=Linux/' \
-        "$QTERMINAL_CONFIG"
+        # General settings
 
-    sed -i \
-        's/^TerminalTransparency=.*/TerminalTransparency=10/' \
-        "$QTERMINAL_CONFIG"
+        if grep -q '^fontSize=' "$config"; then
+            sudo sed -i \
+                's/^fontSize=.*/fontSize=12/' \
+                "$config"
+        else
+            echo 'fontSize=12' | sudo tee -a "$config" >/dev/null
+        fi
 
-    sed -i \
-        's/^MenuVisible=.*/MenuVisible=false/' \
-        "$QTERMINAL_CONFIG"
+        if grep -q '^colorScheme=' "$config"; then
+            sudo sed -i \
+                's/^colorScheme=.*/colorScheme=Linux/' \
+                "$config"
+        else
+            echo 'colorScheme=Linux' | sudo tee -a "$config" >/dev/null
+        fi
 
-    # Shortcuts
-    sed -i \
-        's/^Quit=.*/Quit=Ctrl+Q/' \
-        "$QTERMINAL_CONFIG"
+        if grep -q '^TerminalTransparency=' "$config"; then
+            sudo sed -i \
+                's/^TerminalTransparency=.*/TerminalTransparency=10/' \
+                "$config"
+        else
+            echo 'TerminalTransparency=10' | sudo tee -a "$config" >/dev/null
+        fi
 
-    sed -i \
-        's/^Split%20View%20Left-Right=.*/Split%20View%20Left-Right=Ctrl+V/' \
-        "$QTERMINAL_CONFIG"
+        if grep -q '^MenuVisible=' "$config"; then
+            sudo sed -i \
+                's/^MenuVisible=.*/MenuVisible=false/' \
+                "$config"
+        else
+            echo 'MenuVisible=false' | sudo tee -a "$config" >/dev/null
+        fi
 
-    sed -i \
-        's/^Split%20View%20Top-Bottom=.*/Split%20View%20Top-Bottom=Ctrl+H/' \
-        "$QTERMINAL_CONFIG"
+        # Shortcuts
 
-    sed -i \
-        's/^Close%20Tab=.*/Close%20Tab=Ctrl+W/' \
-        "$QTERMINAL_CONFIG"
-fi
+        if grep -q '^Quit=' "$config"; then
+            sudo sed -i \
+                's/^Quit=.*/Quit=Ctrl+Q/' \
+                "$config"
+        else
+            echo 'Quit=Ctrl+Q' | sudo tee -a "$config" >/dev/null
+        fi
+
+        if grep -q '^Split%20View%20Left-Right=' "$config"; then
+            sudo sed -i \
+                's/^Split%20View%20Left-Right=.*/Split%20View%20Left-Right=Ctrl+V/' \
+                "$config"
+        else
+            echo 'Split%20View%20Left-Right=Ctrl+V' |
+                sudo tee -a "$config" >/dev/null
+        fi
+
+        if grep -q '^Split%20View%20Top-Bottom=' "$config"; then
+            sudo sed -i \
+                's/^Split%20View%20Top-Bottom=.*/Split%20View%20Top-Bottom=Ctrl+H/' \
+                "$config"
+        else
+            echo 'Split%20View%20Top-Bottom=Ctrl+H' |
+                sudo tee -a "$config" >/dev/null
+        fi
+
+        if grep -q '^Close%20Tab=' "$config"; then
+            sudo sed -i \
+                's/^Close%20Tab=.*/Close%20Tab=Ctrl+W/' \
+                "$config"
+        else
+            echo 'Close%20Tab=Ctrl+W' |
+                sudo tee -a "$config" >/dev/null
+        fi
+
+    fi
+
+    sudo chown "$username:$username" "$config_dir"
+    sudo chown "$username:$username" "$config"
+    sudo chmod 755 "$config_dir"
+    sudo chmod 644 "$config"
+}
+
+
+while IFS=: read -r username _ uid _ _ home _; do
+
+    if [[ "$uid" -ge 1000 && "$uid" -lt 60000 ]] &&
+       [[ -d "$home" ]]; then
+
+        echo "[+] Configuring QTerminal for user: $username"
+
+        configure_qterminal_user "$username" "$home"
+
+    fi
+
+done < /etc/passwd
+
+sudo mkdir -p /etc/skel/.config/qterminal.org
+
+sudo tee /etc/skel/.config/qterminal.org/qterminal.ini >/dev/null <<'EOF'
+[General]
+AskOnExit=false
+MenuVisible=false
+TerminalTransparency=10
+colorScheme=Linux
+fontSize=12
+
+[Shortcuts]
+Quit=Ctrl+Q
+Split%20View%20Left-Right=Ctrl+V
+Split%20View%20Top-Bottom=Ctrl+H
+Close%20Tab=Ctrl+W
+EOF
+
+sudo chmod 644 /etc/skel/.config/qterminal.org/qterminal.ini
 
 
 # ============================================================
@@ -815,6 +923,12 @@ polybar-msg cmd quit >/dev/null 2>&1 || true
 echo "[+] Stopping current Devilspie2..."
 
 pkill -x devilspie2 >/dev/null 2>&1 || true
+
+echo "[+] Starting Devilspie2..."
+
+if command -v devilspie2 >/dev/null 2>&1; then
+    nohup devilspie2 >/dev/null 2>&1 &
+fi
 
 
 # ============================================================
